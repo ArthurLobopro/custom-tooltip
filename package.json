@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "sass ./src/index.scss ./dist/index.css --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.77.6"
+  }
+}
