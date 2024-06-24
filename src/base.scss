@@ -1,0 +1,94 @@
+:host {
+    display: inline-block;
+    cursor: pointer;
+}
+
+:root {
+    --tooltip-tag-size: 5px;
+    --background-color: #161B22;
+    --border-color: gray;
+    --color: #DCE3EA;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+
+    >.tooltip-text {
+        max-width: 120px;
+        width: max-content;
+
+        background-color: var(--background-color);
+        color: var(--color);
+        text-align: center;
+        font-size: 12px;
+
+        padding: 4px 8px;
+        border-radius: 4px;
+        border: 1px solid var(--border-color);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &:hover {
+
+        >.tooltip-text,
+        &::after,
+        &::before {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.tooltip {
+
+    &::after,
+    &::before {
+        content: "";
+        margin-left: var(--margin-left);
+        border-width: var(--border-width);
+        border-style: solid;
+        border-color: var(--border-color) transparent transparent transparent;
+
+        --top: unset;
+        --bottom: unset;
+        --left: unset;
+        --right: unset;
+
+        top: var(--top);
+        bottom: var(--bottom);
+        left: var(--left);
+        right: var(--right);
+
+        --rotate: 0deg;
+        --translateY: 0;
+        --translateX: 0;
+        transform: rotate(var(--rotate)) translateY(var(--translateY)) translateX(var(--translateX));
+    }
+
+    &::after,
+    &::before,
+    >.tooltip-text {
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    &::after {
+        --margin-left: calc(var(--tooltip-tag-size) * -1);
+        --border-width: var(--tooltip-tag-size);
+        --border-color: var(--background-color);
+
+        transition: opacity 0s;
+    }
+
+    &::before {
+        --margin-left: calc(calc(var(--tooltip-tag-size) + 1px) * -1);
+        --border-width: calc(var(--tooltip-tag-size) + 1px);
+    }
+}
