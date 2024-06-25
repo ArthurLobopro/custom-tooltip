@@ -6,7 +6,8 @@
   "description": "A css package to use custom tooltips on your site",
   "keywords": ["tooltip", "custom", "css"],
   "scripts": {
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "prepack": "yarn build"
   },
   "devDependencies": {
     "@types/node": "^20.14.8",
