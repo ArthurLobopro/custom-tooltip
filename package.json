@@ -1,4 +1,10 @@
 {
+  "name": "@arthur-lobo/custom-tooltip",
+  "version": "1.0.0",
+  "author": "Arthur Lobo",
+  "license": "MIT",
+  "description": "A css package to use custom tooltips on your site",
+  "keywords": ["tooltip", "custom", "css"],
   "scripts": {
     "build": "node scripts/build.js"
   },
@@ -9,5 +15,16 @@
     "postcss-import": "^16.1.0",
     "postcss-scss": "^4.0.9",
     "sass": "^1.77.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.css",
+  "files": ["./dist/*.css"],
+  "exports": {
+    ".": {
+      "require": "./dist/index.css",
+      "import": "./dist/index.css"
+    }
   }
 }
