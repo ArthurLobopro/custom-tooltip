@@ -1,0 +1,34 @@
+.tooltip.top,
+.tooltip:not(.bottom, .horizontal-left) {
+    >.tooltip-text {
+        bottom: calc(100% + var(--tooltip-tag-size));
+
+    }
+}
+
+.tooltip.bottom .tooltip-text {
+    top: calc(100% + var(--tooltip-tag-size));
+}
+
+.tooltip:not(:is(.right, .left, .horizontal-left)) {
+    >.tooltip-text:not(:is(.right, .left)) {
+        left: 50%;
+        translate: -50%;
+    }
+}
+
+.tooltip.right .tooltip-text {
+    left: 0%;
+}
+
+.tooltip.left .tooltip-text {
+    right: 0%;
+    translate: 0%;
+}
+
+.tooltip.horizontal-left .tooltip-text {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    translate: calc(-100% - var(--tooltip-tag-size) * 2);
+}
