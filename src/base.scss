@@ -5,6 +5,7 @@
 
 :root {
     --tooltip-tag-size: 5px;
+    --tooltip-max-width: 120px;
     --background-color: #161B22;
     --border-color: gray;
     --color: #DCE3EA;
@@ -15,7 +16,7 @@
     display: inline-block;
 
     >.tooltip-text {
-        max-width: 120px;
+        max-width: var(--tooltip-max-width);
         width: max-content;
 
         background-color: var(--background-color);
