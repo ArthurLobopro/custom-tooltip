@@ -1,3 +1,4 @@
+.tooltip.center,
 .tooltip:not(:is(.right, .left)) {
 
     &::after,
@@ -43,7 +44,9 @@
     }
 }
 
-.tooltip.top {
+.tooltip.top,
+.tooltip:not(.bottom, .horizontal-left) {
+
 
     &::after,
     &::before {
