@@ -22,6 +22,12 @@ You can also import directly into your HTML:
         <!-- Your head content -->
     </head>
     <body>
+        <div class="tooltip ">
+            Hover me!
+            <span class="tooltip-text">
+                Hello!
+            </span>
+        </div>
         <!-- Your body content -->
     </body>
 </html>
