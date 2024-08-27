@@ -2,7 +2,6 @@
 .tooltip:not(.bottom, .horizontal-left) {
     >.tooltip-text {
         bottom: calc(100% + var(--tooltip-tag-size));
-
     }
 }
 
