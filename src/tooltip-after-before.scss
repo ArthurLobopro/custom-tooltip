@@ -1,32 +1,9 @@
 .tooltip.center,
-.tooltip:not(:is(.right, .left)) {
+.tooltip:not(:is(.horizontal-left)) {
 
     &::after,
     &::before {
         --left: 50%;
-    }
-}
-
-.tooltip:not(:is(.horizontal-left)) {
-
-    &.right {
-
-        &::after,
-        &::before {
-            --left: clamp(8px, 12px, 25%);
-        }
-    }
-
-    &.left {
-
-        &::after,
-        &::before {
-            --right: clamp(8px, 12px, 25%);
-        }
-
-        &::after {
-            --translateX: -1px;
-        }
     }
 }
 
